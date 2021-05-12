@@ -8,6 +8,8 @@ const CargoSchema = Schema({
     },
     area:{
         type: String,
+        required: true,
+        default: 'administrativa',
         enum:['administrativa','tecnologia']
     }
 }, {versionKey: false, timestamps:false})
