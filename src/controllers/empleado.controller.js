@@ -9,7 +9,7 @@ exports.getAllEmpleados = async (req,res)=>{
         res.status(200).json({ok:true, data: empleados})
     } catch (error) {
         console.log(error);
-        return res.sttus(500).json({ok:false, msg: error})
+        return res.status(500).json({ok:false, msg: error})
     }
 }
 
