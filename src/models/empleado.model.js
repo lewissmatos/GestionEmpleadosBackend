@@ -16,7 +16,8 @@ const EmpleadoSchema = Schema({
     },
     usuario:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     fechaCont:{
         type: Date,
@@ -30,7 +31,6 @@ const EmpleadoSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Area'
     },
-    
     cargo:{
         type: Schema.Types.ObjectId,
         ref: 'Cargo'

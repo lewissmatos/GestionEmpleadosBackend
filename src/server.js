@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 
 const empleadoRoute = require('./routes/empleado.routes')
+const areaRoute = require('./routes/area.routes')
+const cargoRoute = require('./routes/cargo.routes')
 
 const {dbConnection} = require('./database/config.databse')
 require('colors')
@@ -16,6 +18,8 @@ class Server {
 
         //ROUTES
         this.empPath = '/api/v1/empleados'
+        this.areaPath = '/api/v1/areas'
+        this.cargoPath = '/api/v1/cargos'
 
 
         this.port = process.env.PORT;
@@ -37,6 +41,8 @@ class Server {
         this.app.get('/', (req, res) => res.send('API gestion emepleados'))
 
         this.app.use(this.empPath, empleadoRoute)
+        this.app.use(this.areaPath, areaRoute)
+        this.app.use(this.cargoPath, cargoRoute)
     }
 
     middlewares(){
