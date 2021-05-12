@@ -7,8 +7,8 @@ const CargoSchema = Schema({
         trim: true
     },
     area:{
-        type: Schema.Types.ObjectId,
-        ref: 'Area'
+        type: String,
+        enum:['administrativa','tecnologia']
     }
 }, {versionKey: false, timestamps:false})
 

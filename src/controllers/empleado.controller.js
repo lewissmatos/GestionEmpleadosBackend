@@ -4,6 +4,7 @@ exports.getAllEmpleados = async (req,res)=>{
     
     try {
         const empleados = await Empleado.find()
+        .populate('cargo')
         
         res.status(200).json({ok:true, data: empleados})
     } catch (error) {
@@ -17,6 +18,7 @@ exports.getEmpleadoById = async (req,res)=>{
 
     try {
         const empleado = await Empleado.findById(id)
+        .populate('cargo')
         
         res.status(200).json({ok:true, data: empleado})
     } catch (error) {
