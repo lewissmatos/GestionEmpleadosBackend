@@ -37,6 +37,9 @@ const EmpleadoSchema = Schema({
     },
     comision:{
         type:Number
+    },
+    edad:{
+        type:Number
     }
 
 },{versionKey:false, timestamps:false})
