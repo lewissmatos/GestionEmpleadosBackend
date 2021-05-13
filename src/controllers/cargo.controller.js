@@ -1,3 +1,4 @@
+const { find } = require('../models/cargo.model')
 const Cargo =  require ('../models/cargo.model')
 
 exports.getAllCargos = async(req , res)=>{
@@ -24,6 +25,20 @@ exports.getCargosByArea = async(req, res)=>{
 
         res.status(200).json({ok:true, data: cargos})
         
+    } catch (error) {
+        res.status(500).json({ok:false, msg: error})
+        console.log(error);
+    }
+
+}
+
+exports.getAreas =async(req, res)=>{
+
+    try {
+        const areas = await Cargo.find()
+        
+        res.status(200).json({ok:true, data: areas.area})
+
     } catch (error) {
         res.status(500).json({ok:false, msg: error})
         console.log(error);

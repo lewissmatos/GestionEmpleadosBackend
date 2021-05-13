@@ -18,7 +18,7 @@ exports.getEmpleadoById = async (req,res)=>{
 
     try {
         const empleado = await Empleado.findById(id)
-        .populate('cargo')
+        
         
         res.status(200).json({ok:true, data: empleado})
     } catch (error) {
